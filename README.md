@@ -92,8 +92,43 @@ other1.example.com     ansible_connection=ssh        ansible_user=mpdehaan
 other2.example.com     ansible_connection=ssh        ansible_user=mdehaan
 ```
 
+**VAriables:**
 
+**Assigning a variable to one machine: host variables**
+As described above, it is easy to assign variables to hosts that will be used later in playbooks:
+```
+[atlanta]
+host1 http_port=80 maxRequestsPerChild=808
+host2 http_port=303 maxRequestsPerChild=909
+```
 
+**Inheriting variable values: group variables for groups of groups**
+You can make groups of groups using the :children suffix in INI or the children: entry in YAML. You can apply variables to these groups of groups using :vars or vars::
+````
+[atlanta]
+host1
+host2
+
+[raleigh]
+host2
+host3
+
+[southeast:children]
+atlanta
+raleigh
+
+[southeast:vars]
+some_server=foo.southeast.example.com
+halon_system_timeout=30
+self_destruct_countdown=60
+escape_pods=2
+
+[usa:children]
+southeast
+northeast
+southwest
+northwest
+```
 
 
 
