@@ -44,7 +44,8 @@ name: Test Jinja2 Templating
  **TEXT**
  The name is {{ my_name }} => The name is Bond
  
- **Upper , lower **
+ **Upper , lower**
+ 
  The name is {{ my_name|upper  }} => The name is BOND
  
  **Replace**
