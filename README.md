@@ -54,4 +54,37 @@ plwawapp18 | SUCCESS => {
 }
 
 ```
+Hosts and non-standard ports
+**badwolf.example.com:5309**
+
+**With pattern:**
+In INI:
+
+```
+[webservers]
+www[01:50].example.com
+```
+
+In YAML:
+
+```
+  webservers:
+    hosts:
+      www[01:50].example.com:
+```
+
+For numeric patterns, leading zeros can be included or removed, as desired. Ranges are inclusive. You can also define alphabetic ranges:
+
+```
+[databases]
+db-[a:f].example.com
+```
+
+
+
+
+
+
+
+
 
