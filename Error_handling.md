@@ -2,6 +2,7 @@
 
 
 - ignore_errorrs - Ignore Errors
+- any_errors_fatal: true - stop playbook on all host in case failure even on the one
 - failed_when - Fail on a condition -example:
 
 ```
@@ -15,6 +16,8 @@ By default if  one task(step) is failure during performing playbook ansible exit
 
 
 Stop playbook on all hosts in case of failure on the one:
+
+**any_errors_fatal: true**
 
 
 
