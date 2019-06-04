@@ -5,6 +5,16 @@ Jinja2 is templating langugage for Python (library for python)
 It's an engine of templates which can contain variables
 Variables is included in tex using {{ zmienna }}
 
+
+
+# TEST
+
+Tests in Jinja are a way of evaluating template expressions and returning True or False. Jinja ships with many of these. See builtin tests in the official Jinja template documentation.
+
+
+Test syntax varies from filter syntax (variable | filter). 
+
+
 **Ex:1**
 
 ```
@@ -39,7 +49,7 @@ name: Test Jinja2 Templating
  
  Output=6
  
- # Filters:
+ ***Filters:***
  
  **TEXT**
  The name is {{ my_name }} => The name is Bond
@@ -69,7 +79,7 @@ name: Test Jinja2 Templating
  
  
  
- **Others:**
+ **Others Filters:**
  
  none (Test).- The none test is used to check if a variable is none, if a variable is None this tests return true.
 
@@ -118,9 +128,20 @@ sort.- The sort filter sorts elements by ascending order. For example, if a vari
  
  
  
- 
+# LOOKUPS
+
+Lookups
+Lookup plugins allow access to outside data sources. 
   
+ Example:
  
+ ```
+ vars:
+  motd_value: "{{ lookup('file', '/etc/motd') }}"
+tasks:
+  - debug:
+      msg: "motd value is {{ motd_value }}"
+  ```
 
  
  
