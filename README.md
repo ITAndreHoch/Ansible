@@ -39,10 +39,10 @@ all:
          plwawdev05:
 ```
 
-TEst ping:
-# su - ansible
+Test:
 
 ```
+su - ansible
 Last login: Tue Jun  4 13:47:24 CEST 2019 on pts/1
 [ansible@plwawprovision ~]$ ansible apphosts -m ping
 plwawapp18 | SUCCESS => {
