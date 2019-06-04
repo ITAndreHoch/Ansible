@@ -53,9 +53,13 @@ name: Test Jinja2 Templating
  
  
  **LIST & SET**
+ 
  **min, max**
+ 
   {{ 1,2,3,4 | min }} .  => 1
+  
  **unique**
+ 
  {{ 1,2,3,2,3 | unique }} .  => 1
  
  **random**
