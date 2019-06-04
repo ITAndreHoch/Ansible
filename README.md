@@ -80,6 +80,17 @@ For numeric patterns, leading zeros can be included or removed, as desired. Rang
 db-[a:f].example.com
 ```
 
+**Connection type & user**
+
+You can also select the connection type and user on a per host basis:
+
+```
+[targets]
+
+localhost              ansible_connection=local
+other1.example.com     ansible_connection=ssh        ansible_user=mpdehaan
+other2.example.com     ansible_connection=ssh        ansible_user=mdehaan
+```
 
 
 
