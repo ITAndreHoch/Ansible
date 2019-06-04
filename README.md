@@ -92,7 +92,7 @@ other1.example.com     ansible_connection=ssh        ansible_user=mpdehaan
 other2.example.com     ansible_connection=ssh        ansible_user=mdehaan
 ```
 
-**VAriables:**
+**Variables:**
 
 **Assigning a variable to one machine: host variables**
 As described above, it is easy to assign variables to hosts that will be used later in playbooks:
@@ -130,7 +130,22 @@ southwest
 northwest
 ```
 
+The best way to keep variables are subfolders(best practices) to dont put inside any secrets like passwd :
 
+Let’s say, for example, that you keep your inventory file at /etc/ansible/hosts. You have a host named ‘foosball’ that’s a member of two groups: ‘raleigh’ and ‘webservers’. That host will use variables in YAML files at the following locations:
+```
+/etc/ansible/group_vars/raleigh # can optionally end in '.yml', '.yaml', or '.json'
+/etc/ansible/group_vars/webservers
+/etc/ansible/host_vars/foosball
+```
 
+For instance, suppose you have hosts grouped by datacenter, and each datacenter uses some different servers. The data in the groupfile ‘/etc/ansible/group_vars/raleigh’ for the ‘raleigh’ group might look like:
+
+```
+---
+ntp_server: acme.example.org
+database_server: storage.example.org
+
+```
 
 
